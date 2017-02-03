@@ -1,7 +1,3 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
-
-import './main.html';
 import ReactDOM from 'react-dom'
 import React from 'react'
 import { render } from 'react-dom';
@@ -13,12 +9,46 @@ class Main extends React.Component{
 
     render(){
       return(
-        <div>
-          <h1> Main component</h1>
-          
+        <div id="centerBox">
+          <div>
+            <h1>😊 Slidd.it 😊</h1>
+          </div>
+          <div className="slider">
+            <SliderWrapper />
+          </div>
         </div>
       )
     }
+}
+
+class SliderWrapper extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      value: 50,
+    };
+  }
+  render() {
+    let value = this.state.value;
+    return (
+      <div>
+        <div>
+          <Slider
+            value={value}
+            onChange={(value) => this.handleSlide(value)}
+            />
+        </div>
+        <div id="valueText"><p>Value: {value} {Slider.labels}</p></div>
+      </div>
+    );
+  }
+  handleSlide(value){
+    this.setState({
+      value,
+    });
+    console.log(this.state.value)
+  }
 }
 
 Meteor.startup(() => {
