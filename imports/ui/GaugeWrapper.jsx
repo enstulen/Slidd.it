@@ -5,13 +5,20 @@ import { SliderValues } from '../api/slidervalues.js';
 export class GaugeWrapper extends React.Component {
 
     render() {
+        this.state = {
+          value: 0,
+          width: 500,
+          height: 320
+        }
         return (
             <div>
                 <Gauge
-                  value={10}
-                  width={400} height={320}
-                  label="This is my Gauge" />
+                  value={this.state.value}
+                  width={this.state.width}
+                  height={this.state.height}
+                  label="" />
             </div>
+
         );
     }
 }
