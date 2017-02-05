@@ -1,0 +1,26 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "plugins": ["meteor"],
+  "extends": ["plugin:meteor/recommended"],
+  "rules": {
+    "meteor/no-template-lifecycle-assignment": 2
+  },
+  "rules": {
+    "no-undef": [2]
+},
+  "globals": {
+  },
+  "env": {
+    "meteor": true,
+    "node": true,
+    "browser": true
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "testit"
+  }
+}
