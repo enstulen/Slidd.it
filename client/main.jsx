@@ -5,7 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import { mount } from 'react-mounter';
 
 import { SliderWrapper } from '../imports/ui/SliderWrapper';
-
+import { CurrentUser } from '../imports/startup/xUser';
 
 class Main extends React.Component{
 
@@ -24,5 +24,6 @@ class Main extends React.Component{
 }
 
 Meteor.startup(() => {
+  CurrentUser.registerUser();
   mount(Main);
 });

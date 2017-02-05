@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import Slider from 'react-rangeslider';
 import { SliderValues } from '../api/slidervalues.js';
+import { CurrentUser } from '../startup/xUser';
 
 
 export class SliderWrapper extends React.Component {
@@ -34,10 +35,10 @@ export class SliderWrapper extends React.Component {
   }
 
   updateSliderValue(value){
-    console.log(this.props);
-
-    SliderValues.insert({
-        value: value
-    });
+    console.log(CurrentUser.state.userID);
+    var doc = SliderValues.findOne({userID:CurrentUser.state.userID});
+    SliderValues.update({_id:doc._id}, {$set:{
+        value: this.state.value,
+    }});
   }
 }
