@@ -6,6 +6,7 @@ import { mount } from 'react-mounter';
 
 import { SliderWrapper } from '../imports/ui/SliderWrapper';
 import { CurrentUser } from '../imports/startup/xUser';
+import { GaugeWrapper } from '../imports/ui/GaugeWrapper';
 
 class Main extends React.Component{
 
@@ -14,6 +15,9 @@ class Main extends React.Component{
         <div id="centerBox">
           <div>
             <h1>😊 Slidd.it 😊</h1>
+          </div>
+          <div className="gauge">
+            <GaugeWrapper />
           </div>
           <div className="slider">
             <SliderWrapper />
