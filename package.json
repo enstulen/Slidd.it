@@ -2,7 +2,6 @@
   "name": "sliddit",
   "version": "1.0.0",
   "description": "A slider for student usage",
-  "main": "main.jsx",
   "scripts": {
     "start": "meteor run",
     "lint": "eslint ."
