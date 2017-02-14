@@ -9,7 +9,6 @@ import { CurrentUser } from '../imports/startup/xUser';
 import { GaugeWrapper } from '../imports/ui/GaugeWrapper';
 
 class Main extends React.Component{
-
     render(){
       return(
         <div id="centerBox">

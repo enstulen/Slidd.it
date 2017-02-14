@@ -1,0 +1,40 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "node": true,
+    "mocha": true,
+  },
+  "rules": {
+    "max-len": [2, 200, 2, {
+      "ignoreUrls": true,
+      "ignoreComments": false
+    }],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "react/prop-types": [ 2, {"ignore": ["children","className"] }],
+    "class-methods-use-this": [2, { "exceptMethods": [
+      "findType",
+      "createLDObject",
+      "addLink",
+      "formatDate",
+      "renderHeader",
+      "removeItem",
+      "componentWillMount",
+      "render",
+      "getInitialState",
+      "getDefaultProps",
+      "getChildContext",
+      "componentDidMount",
+      "componentWillReceiveProps",
+      "shouldComponentUpdate",
+      "componentWillUpdate",
+      "componentDidUpdate",
+      "componentWillUnmount",
+    ] }],
+  },
+  "globals": {
+    "fetch": false,
+    "window": false,
+    "location": false,
+    "document": false,
+  },
+}
