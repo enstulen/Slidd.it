@@ -1,6 +1,1 @@
-# Dependencies
 node_modules/
-*.log
-.idea/
-build/
-dist/
