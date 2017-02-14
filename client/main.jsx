@@ -6,9 +6,7 @@ import { mount } from 'react-mounter';
 
 import { SliderWrapper } from '../imports/ui/SliderWrapper';
 
-
 class Main extends React.Component{
-
     render(){
       return(
         <div id="centerBox">
