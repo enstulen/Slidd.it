@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import Slider from 'react-rangeslider';
+
 import { SliderValues } from '../api/slidervalues.js';
 import { CurrentUser } from '../startup/xUser';
 

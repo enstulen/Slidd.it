@@ -1,8 +1,7 @@
 {
   "name": "sliddit",
   "version": "1.0.0",
-  "description": "A slider for student usage",
-  "main": "main.jsx",
+  "description": "Sliddit",
   "scripts": {
     "start": "meteor run",
     "lint": "eslint ."
@@ -14,31 +13,28 @@
     "url": "git+https://github.com/enstulen/Slidd.it.git"
   },
   "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
     "babel-runtime": "^6.18.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-meteor": "^4.0.1",
+    "eslint-plugin-react": "^6.9.0",
     "meteor-node-stubs": "~0.2.0",
     "react": "^15.4.2",
     "react-addons-pure-render-mixin": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-mount": "^0.1.3",
     "react-mounter": "^1.2.0",
-    "react-rangeslider": "^1.0.9",
+    "react-rangeslider": "^2.0.1",
     "react-slider": "^0.7.0",
     "react-svg-gauge": "^1.0.4",
-    "react-tools": "^0.13.3"
+    "react-tools": "^0.13.3",
+    "webpack": "^2.2.1"
   },
-  "description": "Sliddit",
-  "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.22.0",
-    "eslint": "^3.15.0",
-    "eslint-plugin-meteor": "^4.0.1",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.9.0"
-  }
+  "main": "index.js"
 }
