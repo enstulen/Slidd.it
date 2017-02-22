@@ -1,11 +1,12 @@
 import React, {Component, PropTypes} from 'react';
 import Slider from 'react-rangeslider';
+import { createContainer } from 'meteor/react-meteor-data';
 
-import { SliderValues } from '../api/slidervalues.js';
+import { SliderValues } from '../api/sliderValues/slidervalues.js';
 import { CurrentUser } from '../startup/xUser';
 
 
-export class SliderWrapper extends React.Component {
+export class SliderWrapper extends Component {
 
   constructor(props){
     super(props);
@@ -31,15 +32,13 @@ export class SliderWrapper extends React.Component {
     this.setState({
       value,
     });
-    this.updateSliderValue(this.state.value);
-    console.log(this.state.value)
-  }
-
-  updateSliderValue(value){
-    console.log(CurrentUser.state.userID);
-    var doc = SliderValues.findOne({userID:CurrentUser.state.userID});
-    SliderValues.update({_id:doc._id}, {$set:{
-        value: this.state.value,
-    }});
+    Meteor.call('sliderValues.update', CurrentUser.state.userID, this.state.value);
   }
 }
+
+export default createContainer(() => {
+  Meteor.subscribe('sliderValues.all');
+  return {
+    sliderValues: SliderValues.find({}).fetch(),
+  };
+}, SliderWrapper);
