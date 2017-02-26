@@ -4,17 +4,23 @@ import { render } from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { mount } from 'react-mounter';
 
-import { SliderWrapper } from './SliderWrapper';
-import { CurrentUser } from '../startup/xUser';
-import { GaugeWrapper } from './GaugeWrapper';
+import { SliderWrapper } from '../SliderWrapper.jsx';
+import { CurrentUser } from '../../startup/xUser.js';
+import { GaugeWrapper } from '../GaugeWrapper.jsx';
 
 import { createContainer } from 'meteor/react-meteor-data';
-import { SliderValues } from '../api/sliderValues/slidervalues.js';
+import { SliderValues } from '../../api/sliderValues/slidervalues.js';
 
-class App extends React.Component{
+
+
+export class App extends Component{
+  constructor(props) {
+    super(props);
+
+  }
   render(){
     return(
-      <div id="centerBox">
+      <center><div id="centerBox">
         <div>
           <h1>😊 Slidd.it 😊</h1>
         </div>
@@ -24,14 +30,20 @@ class App extends React.Component{
         <div className="slider">
           <SliderWrapper />
         </div>
-      </div>
+      </div></center>
     )
   }
 }
 
-export default createContainer(() => {
-  Meteor.subscribe('sliderValues.all');
-  return {
-      sliderValues: SliderValues.find({}).fetch(),
-  };
-}, App);
+export class Main extends Component{
+  constructor(props) {
+    super(props);
+  }
+  render(){
+    return(
+      <div>
+        {this.props.content}
+      </div>
+    )
+  }
+}
