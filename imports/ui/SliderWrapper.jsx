@@ -35,10 +35,3 @@ export class SliderWrapper extends Component {
     Meteor.call('sliderValues.update', CurrentUser.state.userID, this.state.value);
   }
 }
-
-export default createContainer(() => {
-  Meteor.subscribe('sliderValues.all');
-  return {
-    sliderValues: SliderValues.find({}).fetch(),
-  };
-}, SliderWrapper);

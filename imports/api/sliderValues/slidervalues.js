@@ -5,12 +5,13 @@ import { check } from 'meteor/check';
 export const SliderValues = new Mongo.Collection("sliderValues");
 
 Meteor.methods({
-  'sliderValues.insert'(userID, value) {
+  'sliderValues.insert'(userID, value, lectureName) {
     check(userID, String);
     check(value, Number);
     SliderValues.insert({
       userID: userID,
       value: value,
+      lectureName: lectureName,
     });
   },
   'sliderValues.update'(userID, value) {
