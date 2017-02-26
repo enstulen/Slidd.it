@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 
 import { createContainer } from 'meteor/react-meteor-data';
 import { Lectures } from '../../api/lectures/lectures.js';
+import { CurrentUser } from '../../startup/xUser.js';
 
 export default class Welcome extends Component {
   constructor(props) {
@@ -13,13 +14,18 @@ export default class Welcome extends Component {
   handleButtonPress(event) {
     event.preventDefault();
     // Find the text in textField via the React ref
-    const text = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
+    const lectureName = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
     //Insert lecture in database
-    Meteor.call("lectures.insert", text)
+    Meteor.call("lectures.insert", lectureName);
+    //CurrentUser.registerUser(lectureName);
     // Clear form
     ReactDOM.findDOMNode(this.refs.textInput).value = '';
-    //Go to app page
-    FlowRouter.go('/app');
+    //Go to lecture page
+    var params = {
+      lectureName: lectureName,
+    };
+    var routeName = 'lecture';
+    FlowRouter.go(routeName, params, {});
 
   }
 

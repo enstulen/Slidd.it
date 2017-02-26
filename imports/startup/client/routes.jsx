@@ -11,7 +11,8 @@ FlowRouter.route('/', {
   },
 });
 
-FlowRouter.route('/app', {
+FlowRouter.route('/lecture/:lectureName', {
+  name: 'lecture',
   action() {
     mount(Main, {content: <AppContainer />});
   },

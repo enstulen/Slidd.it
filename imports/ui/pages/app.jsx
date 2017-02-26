@@ -11,8 +11,6 @@ import { GaugeWrapper } from '../GaugeWrapper.jsx';
 import { createContainer } from 'meteor/react-meteor-data';
 import { SliderValues } from '../../api/sliderValues/slidervalues.js';
 
-
-
 export class App extends Component{
   constructor(props) {
     super(props);
@@ -38,6 +36,9 @@ export class App extends Component{
 export class Main extends Component{
   constructor(props) {
     super(props);
+  }
+  componentWillMount() {
+    CurrentUser.registerUser(FlowRouter.getParam("lectureName"));
   }
   render(){
     return(

@@ -5,9 +5,9 @@ import { check } from 'meteor/check';
 export const Lectures = new Mongo.Collection("lectures");
 
 Meteor.methods({
-  'lectures.insert'(lectureID) {
+  'lectures.insert'(lectureName) {
       Lectures.insert({
-        lectureName: lectureID,
+        lectureName: lectureName,
       });
   },
 });
