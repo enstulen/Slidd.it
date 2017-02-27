@@ -32,7 +32,7 @@ export default class Welcome extends Component {
   render(){
     return(
       <center><div id="centerBox">
-        <h1>Hallaballa</h1>
+        <h1>Slidd.it</h1>
         <div>
             <div className="form-group">
               <input

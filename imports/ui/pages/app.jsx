@@ -20,7 +20,7 @@ export class App extends Component{
     return(
       <center><div id="centerBox">
         <div>
-          <h1>😊 Slidd.it 😊</h1>
+          <h1>{FlowRouter.getParam("lectureName")}</h1>
         </div>
         <div className="gauge">
           <GaugeWrapper sliderValues={this.props.sliderValues}/>
