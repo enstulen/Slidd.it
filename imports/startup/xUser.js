@@ -1,5 +1,6 @@
 import { Random } from 'meteor/random'
 import { SliderValues } from '../api/sliderValues/slidervalues.js';
+import { Meteor } from 'meteor/meteor';
 
 
 export class xUser {
@@ -9,8 +10,8 @@ export class xUser {
       value: 50,
     };
   }
-   registerUser(){
-     Meteor.call('sliderValues.insert', this.state.userID, this.state.value);
+   registerUser(lectureName){
+     Meteor.call('sliderValues.insert', this.state.userID, this.state.value, lectureName);
   }
 }
 export const CurrentUser = new xUser();
