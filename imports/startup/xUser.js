@@ -1,7 +1,5 @@
-import { Random } from 'meteor/random'
-import { SliderValues } from '../api/sliderValues/slidervalues.js';
 import { Meteor } from 'meteor/meteor';
-
+import { Random } from 'meteor/random';
 
 export class XUser {
   constructor() {

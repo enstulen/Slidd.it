@@ -15,6 +15,7 @@
     "react/no-find-dom-node": "off",
     "react/prefer-stateless-function": "off",
     "react/no-string-refs": "off",
+    "import/extensions": "off",
     "react/prop-types": [ 2, {"ignore": ["children","className"] }],
     "class-methods-use-this": [2, { "exceptMethods": [
       "findType",
