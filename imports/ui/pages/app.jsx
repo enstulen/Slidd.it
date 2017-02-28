@@ -1,12 +1,14 @@
 import ReactDOM from 'react-dom'
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes } from 'react';
 import { render } from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { mount } from 'react-mounter';
 
-import { SliderWrapper } from '../SliderWrapper.jsx';
-import { CurrentUser } from '../../startup/xUser.js';
-import { GaugeWrapper } from '../GaugeWrapper.jsx';
+import { SliderWrapper } from '../SliderWrapper';
+import { CurrentUser } from '../../startup/xUser';
+import { GaugeWrapper } from '../GaugeWrapper';
+import { NavbarHeader } from '../NavbarHeader'
+
 
 import { createContainer } from 'meteor/react-meteor-data';
 import { SliderValues } from '../../api/sliderValues/slidervalues.js';
@@ -19,6 +21,9 @@ export class App extends Component{
   render(){
     return(
       <center><div id="centerBox">
+        <div className="navbar">
+          <NavbarHeader />
+        </div>
         <div>
           <h1>{FlowRouter.getParam("lectureName")}</h1>
         </div>

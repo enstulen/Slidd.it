@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Lectures } from '../../api/lectures/lectures.js';
 import { CurrentUser } from '../../startup/xUser.js';
+import { NavbarHeader } from '../NavbarHeader'
 
 export default class Welcome extends Component {
   constructor(props) {
@@ -32,6 +33,9 @@ export default class Welcome extends Component {
   render(){
     return(
       <center><div id="centerBox">
+        <div className="navbar">
+          <NavbarHeader />
+        </div>
         <h1>Slidd.it</h1>
         <div>
             <div className="form-group">
