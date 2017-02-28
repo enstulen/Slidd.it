@@ -20,10 +20,11 @@ export class App extends Component{
   }
   render(){
     return(
+      <div>
+      <div className="navbar">
+        <NavbarHeader />
+      </div>
       <center><div id="centerBox">
-        <div className="navbar">
-          <NavbarHeader />
-        </div>
         <div>
           <h1>{FlowRouter.getParam("lectureName")}</h1>
         </div>
@@ -34,6 +35,7 @@ export class App extends Component{
           <SliderWrapper />
         </div>
       </div></center>
+    </div>
     )
   }
 }

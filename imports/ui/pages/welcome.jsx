@@ -32,10 +32,11 @@ export default class Welcome extends Component {
 
   render(){
     return(
+      <div>
+      <div className="navbar">
+        <NavbarHeader />
+      </div>
       <center><div id="centerBox">
-        <div className="navbar">
-          <NavbarHeader />
-        </div>
         <h1>Slidd.it</h1>
         <div>
             <div className="form-group">
@@ -50,6 +51,7 @@ export default class Welcome extends Component {
             </div>
         </div>
       </div></center>
+    </div>
     )
   }
 }
