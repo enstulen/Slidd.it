@@ -1,29 +1,46 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 export class NavbarHeader extends Component {
 
   render() {
     return (
       <div>
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">React-Bootstrap</a>
-            </Navbar.Brand>
-          </Navbar.Header>
-          <Nav>
-            <NavItem eventKey={1} href="#">Link</NavItem>
-            <NavItem eventKey={2} href="#">Link</NavItem>
-            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey={3.3}>Separated link</MenuItem>
-            </NavDropdown>
-          </Nav>
-        </Navbar>
+        <nav className="navbar navbar-default">
+          <div className="container-fluid">
+            <div className="navbar-header">
+              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar" />
+                <span className="icon-bar" />
+                <span className="icon-bar" />
+              </button>
+              <a className="navbar-brand" href="#">
+                <img alt="Slidd.it" src="../../sliddit_logo.png" />
+              </a>
+            </div>
+            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul className="nav navbar-nav">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li className="dropdown">
+                  <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span className="caret"></span></a>
+                  <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Change subject</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li role="separator" className="divider" />
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <form className=" nav navbar-form navbar-right">
+                <div className="form-group">
+                  <input type="text" className="form-control" placeholder="Search" />
+                </div>
+                <button type="submit" className="btn btn-default">Submit</button>
+              </form>
+            </div>
+          </div>
+        </nav>
       </div>
     );
   }

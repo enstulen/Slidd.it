@@ -4,49 +4,15 @@ import { render } from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { mount } from 'react-mounter';
 
-<<<<<<< HEAD:imports/ui/App.jsx
-import { SliderWrapper } from './SliderWrapper';
-import { CurrentUser } from '../startup/xUser';
-import { GaugeWrapper } from './GaugeWrapper';
-import { NavbarHeader } from './NavbarHeader'
-=======
-import { SliderWrapper } from '../SliderWrapper.jsx';
-import { CurrentUser } from '../../startup/xUser.js';
-import { GaugeWrapper } from '../GaugeWrapper.jsx';
->>>>>>> Develop:imports/ui/pages/app.jsx
+import { SliderWrapper } from '../SliderWrapper';
+import { CurrentUser } from '../../startup/xUser';
+import { GaugeWrapper } from '../GaugeWrapper';
+import { NavbarHeader } from '../NavbarHeader'
+
 
 import { createContainer } from 'meteor/react-meteor-data';
 import { SliderValues } from '../../api/sliderValues/slidervalues.js';
 
-<<<<<<< HEAD:imports/ui/App.jsx
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <div id="centerBox">
-          <div className="navbar">
-            <NavbarHeader />
-          </div>
-          <div className="gauge">
-            <GaugeWrapper sliderValues={this.props.sliderValues} />
-          </div>
-          <div className="slider">
-            <SliderWrapper />
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
-
-
-export default createContainer(() => {
-  Meteor.subscribe('sliderValues.all');
-  return {
-    sliderValues: SliderValues.find({}).fetch(),
-  };
-}, App);
-=======
 export class App extends Component{
   constructor(props) {
     super(props);
@@ -55,6 +21,9 @@ export class App extends Component{
   render(){
     return(
       <center><div id="centerBox">
+        <div className="navbar">
+          <NavbarHeader />
+        </div>
         <div>
           <h1>{FlowRouter.getParam("lectureName")}</h1>
         </div>
@@ -84,4 +53,3 @@ export class Main extends Component{
     )
   }
 }
->>>>>>> Develop:imports/ui/pages/app.jsx
