@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
-import { NavbarHeader } from '../NavbarHeader';
+import NavbarHeader from '../NavbarHeader';
 
 
 export default class Welcome extends Component {
