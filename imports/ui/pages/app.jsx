@@ -7,7 +7,7 @@ import { mount } from 'react-mounter';
 import { SliderWrapper } from '../SliderWrapper';
 import { CurrentUser } from '../../startup/xUser';
 import { GaugeWrapper } from '../GaugeWrapper';
-import { NavbarHeader } from '../NavbarHeader'
+import NavbarHeader from '../NavbarHeader'
 
 
 import { createContainer } from 'meteor/react-meteor-data';
