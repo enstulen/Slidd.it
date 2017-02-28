@@ -1,55 +1,52 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import ReactDOM from 'react-dom';
+import { Meteor } from 'meteor/meteor';
+import { NavbarHeader } from '../NavbarHeader';
 
-import { createContainer } from 'meteor/react-meteor-data';
-import { Lectures } from '../../api/lectures/lectures.js';
-import { CurrentUser } from '../../startup/xUser.js';
-import { NavbarHeader } from '../NavbarHeader'
 
 export default class Welcome extends Component {
+
   constructor(props) {
     super(props);
+
+    this.handleButtonPress = this.handleButtonPress.bind(this);
   }
 
   handleButtonPress(event) {
     event.preventDefault();
     // Find the text in textField via the React ref
     const lectureName = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
-    //Insert lecture in database
-    Meteor.call("lectures.insert", lectureName);
-    //CurrentUser.registerUser(lectureName);
+    // Insert lecture in database
+    Meteor.call('lectures.insert', lectureName);
     // Clear form
     ReactDOM.findDOMNode(this.refs.textInput).value = '';
-    //Go to lecture page
-    var params = {
-      lectureName: lectureName,
+    // Go to lecture page
+    const params = {
+      lectureName,
     };
-    var routeName = 'lecture';
+    const routeName = 'lecture';
     FlowRouter.go(routeName, params, {});
-
   }
 
-  render(){
-    return(
-      <center><div id="centerBox">
+  render() {
+    return (
+      <div>
         <div className="navbar">
           <NavbarHeader />
         </div>
-        <h1>Slidd.it</h1>
-        <div>
+        <center><div id="centerBox">
+          <h1>Slidd.it</h1>
+          <div>
             <div className="form-group">
-              <input
-                type="text"
-                className="form-control"
-                ref="textInput"
-                placeholder="Enter subject"/>
+              <input type="text" className="form-control" ref="textInput" placeholder="Enter subject" />
             </div>
             <div>
-              <button type="button" className="btn btn-primary btn-lg" onClick={this.handleButtonPress.bind(this)}>Submit</button>
+              <button type="button" className="btn btn-primary btn-lg" onClick={this.handleButtonPress}>Submit</button>
             </div>
-        </div>
-      </div></center>
-    )
+          </div>
+        </div></center>
+      </div>
+    );
   }
 }

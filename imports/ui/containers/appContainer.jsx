@@ -1,14 +1,16 @@
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
-import { SliderValues } from '../../api/sliderValues/slidervalues.js';
-import { App } from '../../ui/pages/app.jsx';
+import { SliderValues } from '../../api/sliderValues/slidervalues';
+import { App } from '../../ui/pages/app';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 export default AppContainer = createContainer(() => {
-  const sliderValuesHandle = Meteor.subscribe('sliderValues.all');
-  const lecturesHandle = Meteor.subscribe('lectures.all');
+  Meteor.subscribe('sliderValues.all');
+  Meteor.subscribe('lectures.all');
 
-  var lectureName = FlowRouter.getParam("lectureName")
+  const lectureName = FlowRouter.getParam('lectureName');
+
   return {
-      sliderValues: SliderValues.find({lectureName: lectureName}).fetch(),
+    sliderValues: SliderValues.find({ lectureName }).fetch(),
   };
 }, App);
