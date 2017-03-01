@@ -16,7 +16,7 @@ export default class SliderWrapper extends Component {
     this.setState({
       value,
     });
-    Meteor.call('sliderValues.update', CurrentUser.state.userID, this.state.value);
+    Meteor.call('sliderValues.update', CurrentUser.state.userID, this.state.value, new Date());
   }
   render() {
     const value = this.state.value;
