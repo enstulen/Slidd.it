@@ -17,14 +17,12 @@ Meteor.methods({
       createdAt,
     });
   },
-  'sliderValues.update'(userID, value, date) {
+  'sliderValues.update'(userID, value) {
     check(value, Number);
     check(value, Number);
-    check(date, Date);
     SliderValues.update({ userID }, {
       $set: {
         value,
-        createdAt: date,
       },
     });
   },
