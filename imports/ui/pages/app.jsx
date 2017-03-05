@@ -1,55 +1,52 @@
-import ReactDOM from 'react-dom'
 import React, { Component, PropTypes } from 'react';
-import { render } from 'react-dom';
-import { Meteor } from 'meteor/meteor';
-import { mount } from 'react-mounter';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
-import { SliderWrapper } from '../SliderWrapper';
+import SliderWrapper from '../SliderWrapper';
 import { CurrentUser } from '../../startup/xUser';
-import { GaugeWrapper } from '../GaugeWrapper';
-import { NavbarHeader } from '../NavbarHeader'
+import NavbarHeader from '../NavbarHeader'
+import GaugeWrapper from '../GaugeWrapper';
 
 
-import { createContainer } from 'meteor/react-meteor-data';
-import { SliderValues } from '../../api/sliderValues/slidervalues.js';
-
-export class App extends Component{
-  constructor(props) {
-    super(props);
-
-  }
-  render(){
-    return(
-      <center><div id="centerBox">
+export class App extends Component {
+  render() {
+    return (
+      <div>
         <div className="navbar">
           <NavbarHeader />
         </div>
-        <div>
-          <h1>{FlowRouter.getParam("lectureName")}</h1>
-        </div>
-        <div className="gauge">
-          <GaugeWrapper sliderValues={this.props.sliderValues}/>
-        </div>
-        <div className="slider">
-          <SliderWrapper />
-        </div>
-      </div></center>
-    )
+        <center><div id="centerBox">
+          <div>
+            <h1>{FlowRouter.getParam('lectureName')}</h1>
+          </div>
+          <div className="gauge">
+            <GaugeWrapper sliderValues={this.props.sliderValues} />
+          </div>
+          <div className="slider">
+            <SliderWrapper />
+          </div>
+        </div></center>
+      </div>
+    );
   }
 }
 
-export class Main extends Component{
-  constructor(props) {
-    super(props);
-  }
+export class Main extends Component {
   componentWillMount() {
-    CurrentUser.registerUser(FlowRouter.getParam("lectureName"));
+    CurrentUser.registerUser(FlowRouter.getParam('lectureName'));
   }
-  render(){
-    return(
+  render() {
+    return (
       <div>
         {this.props.content}
       </div>
-    )
+    );
   }
 }
+
+App.propTypes = {
+  sliderValues: PropTypes.array.isRequired,
+};
+
+Main.propTypes = {
+  content: PropTypes.element.isRequired,
+};

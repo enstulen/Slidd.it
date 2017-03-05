@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
-export class NavbarHeader extends Component {
+export default class NavbarHeader extends Component {
+
+  handleButtonPress(event) {
+    this.event = event;
+    event.preventDefault();
+    FlowRouter.go('/');
+  }
 
   render() {
     return (
@@ -14,30 +21,20 @@ export class NavbarHeader extends Component {
                 <span className="icon-bar" />
                 <span className="icon-bar" />
               </button>
-              <a className="navbar-brand" href="#">
-                <img alt="Slidd.it" src="../../sliddit_logo.png" />
+              <a className="navbar-brand">
+                <img className="img-responsive" width="105" alt="Slidd.it" src="logo3.png" />
               </a>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="hei" onClick={this.handleButtonPress}>Home</a></li>
                 <li className="dropdown">
-                  <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span className="caret"></span></a>
+                  <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Active lectures <span className="caret" /></a>
                   <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">Change subject</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li role="separator" className="divider" />
-                    <li><a href="#">Separated link</a></li>
+                    <li><a>Action</a></li>
                   </ul>
                 </li>
               </ul>
-              <form className=" nav navbar-form navbar-right">
-                <div className="form-group">
-                  <input type="text" className="form-control" placeholder="Search" />
-                </div>
-                <button type="submit" className="btn btn-default">Submit</button>
-              </form>
             </div>
           </div>
         </nav>
