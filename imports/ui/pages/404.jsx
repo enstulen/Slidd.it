@@ -1,7 +1,6 @@
+import { FlowRouter } from 'meteor/kadira:flow-router';
 import React, { Component } from 'react';
-import { mount } from 'react-mounter';
 import NavbarHeader from '../NavbarHeader';
-import Welcome from '../../ui/pages/welcome.jsx';
 
 
 class FourOFour extends Component {
@@ -13,7 +12,7 @@ class FourOFour extends Component {
 
   handleButtonPress(event) {
     event.preventDefault();
-    window.location = 'http://www.slidd.it';
+    FlowRouter.go('/');
   }
 
   render() {
@@ -23,6 +22,7 @@ class FourOFour extends Component {
           <NavbarHeader />
         </div>
         <center><div id="centerBox">
+          <img width="300" alt="høøøøøna" src="Hoonegif.gif" />
           <h1><big><big>404</big></big></h1>
           <h2>Page not found</h2>
           <button type="button" className="btn btn-primary btn-lg" onClick={this.handleButtonPress}>Go to main page</button>
