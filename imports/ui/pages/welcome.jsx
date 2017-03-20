@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import NavbarHeader from '../NavbarHeader';
 
 
-export default class Welcome extends Component {
+export class Welcome extends Component {
 
   constructor(props) {
     super(props);
@@ -40,7 +40,10 @@ export default class Welcome extends Component {
     return (
       <div>
         <div className="navbar">
-          <NavbarHeader />
+          <NavbarHeader lectures={this.props.lectures} />
+        </div>
+        <div>
+          {this.props.content}
         </div>
         <center><div id="centerBox">
           <h1>Slidd.it</h1>
@@ -57,3 +60,21 @@ export default class Welcome extends Component {
     );
   }
 }
+
+export class WelcomeMain extends Component {
+  render() {
+    return (
+      <div>
+        {this.props.content}
+      </div>
+    );
+  }
+}
+
+WelcomeMain.propTypes = {
+  content: PropTypes.element.isRequired,
+};
+
+NavbarHeader.propTypes = {
+    lectures: PropTypes.array.isRequired,
+};

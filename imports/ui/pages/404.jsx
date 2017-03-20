@@ -1,15 +1,9 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import NavbarHeader from '../NavbarHeader';
 
 
-class FourOFour extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleButtonPress = this.handleButtonPress.bind(this);
-  }
-
+export class FourOFour extends Component {
   handleButtonPress(event) {
     event.preventDefault();
     FlowRouter.go('/');
@@ -19,10 +13,10 @@ class FourOFour extends Component {
     return (
       <div>
         <div className="navbar">
-          <NavbarHeader />
+          <NavbarHeader lectures={this.props.lectures} />
         </div>
         <center><div id="centerBox">
-          <img width="300" alt="høøøøøna" src="Hoonegif.gif" />
+          <img width="300" alt="404Chicken" src="/Hoonegif.gif" />
           <h1><big><big>404</big></big></h1>
           <h2>Page not found</h2>
           <button type="button" className="btn btn-primary btn-lg" onClick={this.handleButtonPress}>Go to main page</button>
@@ -32,4 +26,20 @@ class FourOFour extends Component {
   }
 }
 
-export default FourOFour;
+export class FourOFourMain extends Component {
+  render() {
+    return (
+      <div>
+        {this.props.content}
+      </div>
+    );
+  }
+}
+
+FourOFourMain.propTypes = {
+  content: PropTypes.element.isRequired,
+};
+
+NavbarHeader.propTypes = {
+    lectures: PropTypes.array.isRequired,
+};
