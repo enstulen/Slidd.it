@@ -2,10 +2,10 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
 import { SliderValues } from '../../api/sliderValues/slidervalues';
-import { App } from '../../ui/pages/app';
+import { Welcome } from '../../ui/pages/welcome';
 import { Lectures } from '../../api/lectures/lectures.js';
 
-export default AppContainer = createContainer(() => {
+export default WelcomeContainer = createContainer(() => {
   Meteor.subscribe('sliderValues.all');
   Meteor.subscribe('lectures.all');
 
@@ -15,4 +15,4 @@ export default AppContainer = createContainer(() => {
     lectures: Lectures.find({}).fetch(),
     sliderValues: SliderValues.find({ lectureName }).fetch(),
   };
-}, App);
+}, Welcome);

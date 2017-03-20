@@ -12,7 +12,7 @@ export class App extends Component {
     return (
       <div>
         <div className="navbar">
-          <NavbarHeader />
+          <NavbarHeader lectures={this.props.lectures} />
         </div>
         <center><div id="centerBox">
           <div>
@@ -49,4 +49,8 @@ App.propTypes = {
 
 Main.propTypes = {
   content: PropTypes.element.isRequired,
+};
+
+NavbarHeader.propTypes = {
+    lectures: PropTypes.array.isRequired,
 };

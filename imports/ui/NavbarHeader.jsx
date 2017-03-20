@@ -1,5 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import { createContainer } from 'meteor/react-meteor-data';
+
+import { Lectures } from '../api/lectures/lectures.js';
+
+import Lecture from './Lecture.jsx';
 
 export default class NavbarHeader extends Component {
 
@@ -7,6 +12,11 @@ export default class NavbarHeader extends Component {
     this.event = event;
     event.preventDefault();
     FlowRouter.go('/');
+  }
+  renderLectures() {
+    return this.props.lectures.map((lecture) => (
+      <Lecture key={lecture._id} lecture={lecture} />
+    ));
   }
 
   render() {
@@ -31,7 +41,7 @@ export default class NavbarHeader extends Component {
                 <li className="dropdown">
                   <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Active lectures <span className="caret" /></a>
                   <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a>Action</a></li>
+                    {this.renderLectures()}
                   </ul>
                 </li>
               </ul>
