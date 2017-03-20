@@ -3,7 +3,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import SliderWrapper from '../SliderWrapper';
 import { CurrentUser } from '../../startup/xUser';
-import NavbarHeader from '../NavbarHeader'
+import NavbarHeader from '../NavbarHeader';
 import GaugeWrapper from '../GaugeWrapper';
 
 
