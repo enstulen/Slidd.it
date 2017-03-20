@@ -27,7 +27,7 @@ export default class NavbarHeader extends Component {
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li><a href="hei" onClick={this.handleButtonPress}>Home</a></li>
+                <li><a href="/" onClick={this.handleButtonPress}>Home</a></li>
                 <li className="dropdown">
                   <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Active lectures <span className="caret" /></a>
                   <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">

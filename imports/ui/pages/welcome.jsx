@@ -9,12 +9,19 @@ export default class Welcome extends Component {
 
   constructor(props) {
     super(props);
-
+    // Bind events
     this.handleButtonPress = this.handleButtonPress.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
-  handleButtonPress(event) {
-    event.preventDefault();
+  handleKeyDown(event) {
+    // Click the submit-button if enter key is pressed. (Enter key is key number 13)
+    if (event.keyCode === 13) {
+      this.handleButtonPress();
+    }
+  }
+
+  handleButtonPress() {
     // Find the text in textField via the React ref
     const lectureName = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
     // Insert lecture in database
@@ -39,7 +46,7 @@ export default class Welcome extends Component {
           <h1>Slidd.it</h1>
           <div>
             <div className="form-group">
-              <input type="text" className="form-control" ref="textInput" placeholder="Enter subject" />
+              <input type="text" className="form-control" ref="textInput" placeholder="Enter subject" onKeyDown={this.handleKeyDown} />
             </div>
             <div>
               <button type="button" className="btn btn-primary btn-lg" onClick={this.handleButtonPress}>Submit</button>
