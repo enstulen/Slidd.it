@@ -1,13 +1,33 @@
 import React, { Component, PropTypes } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import ReactDOM from 'react-dom';
+import { Meteor } from 'meteor/meteor';
+
 
 import SliderWrapper from '../SliderWrapper';
 import { CurrentUser } from '../../startup/xUser';
 import NavbarHeader from '../NavbarHeader';
 import GaugeWrapper from '../GaugeWrapper';
-
+import Comment from '../components/comment';
 
 export class App extends Component {
+  constructor(props) {
+    super(props);
+    // Bind events
+    this.handleButtonPress = this.handleButtonPress.bind(this);
+  }
+
+  handleButtonPress() {
+    // Find the text in textField via the React ref
+    const comment = ReactDOM.findDOMNode(this.refs.textInputComment).value.trim();
+    Meteor.call('comments.insert', comment, FlowRouter.getParam('lectureName'));
+  }
+
+  renderComments() {
+    return this.props.comments.map((comment) => (
+      <Comment key={comment._id} comment={comment} />
+    ));
+  }
   render() {
     return (
       <div>
@@ -23,6 +43,15 @@ export class App extends Component {
           </div>
           <div className="slider">
             <SliderWrapper />
+          </div>
+          <div className="comments">
+            <form className="form">
+              <input type="text" ref="textInputComment" className="commentInput" placeholder="Type to add new comment" />
+              <button type="button" onClick={this.handleButtonPress} className="btn btn-primary btn-lg">Submit</button>
+            </form>
+            <ul>
+              {this.renderComments()}
+            </ul>
           </div>
         </div></center>
       </div>

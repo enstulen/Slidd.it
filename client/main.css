@@ -93,3 +93,33 @@ h1 {
     margin: 0;
     width: 70%;
 }
+
+.comments {
+  margin: 0 auto;
+  min-height: 100%;
+  background: transparent;
+}
+form {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  position: relative;
+}
+input.commentInput {
+  box-sizing: border-box;
+  padding: 10px 10px 10px 10px;
+  background: transparent;
+  border: none;
+  width: 90%;
+  font-size: 1em;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+li.commentList {
+  position: relative;
+  list-style: none;
+  padding: 15px;
+  border-bottom: #eee solid 1px;
+}
