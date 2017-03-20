@@ -22,7 +22,7 @@ export default class NavbarHeader extends Component {
                 <span className="icon-bar" />
               </button>
               <a className="navbar-brand">
-                <img className="img-responsive" width="105" alt="Slidd.it" src="logo3.png" />
+                <img className="img-responsive" onClick={this.handleButtonPress} width="105" alt="Slidd.it" src="logo3.png" />
               </a>
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
