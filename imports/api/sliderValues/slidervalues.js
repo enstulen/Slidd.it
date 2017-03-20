@@ -19,7 +19,7 @@ Meteor.methods({
   },
   'sliderValues.update'(userID, value) {
     check(value, Number);
-    check(value, Number);
+    check(userID, String);
     SliderValues.update({ userID }, {
       $set: {
         value,
@@ -31,6 +31,15 @@ Meteor.methods({
     SliderValues.update({ userID }, {
       $set: {
         createdAt: date,
+      },
+    });
+  },
+  'sliderValues.updateLecture'(userID, lectureName) {
+    check(userID, String);
+    check(lectureName, String);
+    SliderValues.update({ userID }, {
+      $set: {
+        lectureName,
       },
     });
   },

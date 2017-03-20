@@ -93,3 +93,21 @@ h1 {
     margin: 0;
     width: 70%;
 }
+.liButton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  width:100%;
+  text-align: left;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #000000;
+  background: #ffffff;
+  padding: 5px 15px 5px 15px;
+  border: solid #f8f8f8 0px;
+  text-decoration: none;
+}
+
+.liButton:hover {
+  background: #f8f8f8;
+  text-decoration: none;
+}
