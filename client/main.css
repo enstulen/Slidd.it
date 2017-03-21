@@ -146,4 +146,5 @@ button.invisibleButton {
   font-size:0;
   top: 50%;
   height: 49px;
+  outline: none;
 }
