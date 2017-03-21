@@ -106,7 +106,10 @@ h1 {
   border: solid #f8f8f8 0px;
   text-decoration: none;
 }
-
+.liButton:hover {
+  background: #f8f8f8;
+  text-decoration: none;
+}
 .comments {
   margin: 0 auto;
   min-height: 100%;
@@ -137,7 +140,10 @@ li.commentList {
   border-bottom: #eee solid 1px;
 }
 
-.liButton:hover {
-  background: #f8f8f8;
-  text-decoration: none;
+button.invisibleButton {
+  background: transparent;
+  border: none;
+  font-size:0;
+  top: 50%;
+  height: 49px;
 }
