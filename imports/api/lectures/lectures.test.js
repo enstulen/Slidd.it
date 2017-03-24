@@ -8,6 +8,7 @@ if (Meteor.isServer) {
       const count = Lectures.find().count();
 
       beforeEach(() => {
+        Lectures.remove({});
         Lectures.insert('lectureName');
       });
       it('Can add new lecture', () => {

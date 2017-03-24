@@ -25,3 +25,4 @@ session@1.1.7
 twbs:bootstrap
 percolate:synced-cron
 practicalmeteor:mocha
+xolvio:cleaner

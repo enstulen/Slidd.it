@@ -1,23 +1,32 @@
 import { Meteor } from 'meteor/meteor';
 import { assert } from 'meteor/practicalmeteor:chai';
+import { resetDatabase } from 'meteor/xolvio:cleaner';
 import { SliderValues } from './slidervalues.js';
+
 
 if (Meteor.isServer) {
   describe('SliderValues', () => {
     describe('Methods', () => {
       const count = SliderValues.find().count();
-      const values = SliderValues;
 
       beforeEach(() => {
-        SliderValues.insert('userID', 40, 'lectureName', new Date());
+        resetDatabase();
+        SliderValues.remove({});
       });
       it('Can insert slidervalue', () => {
         // Verify that the method does what we expected
+        SliderValues.insert('user1', 40, 'lectureName', new Date());
         assert.equal(SliderValues.find().count(), (count + 1));
       });
 
       it('Can update slidervalue', () => {
-        assert.equal(SliderValues.length, values.length + 1);
+        SliderValues.insert('user2', 52, 'lectureName', new Date());
+        SliderValues.update('user2', 47);
+        var result = SliderValues.filter(function (obj) {
+          return obj.userID === 'user2';
+        });
+
+        assert.equal(result[1], 47);
       });
     });
   });
