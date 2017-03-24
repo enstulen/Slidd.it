@@ -15,12 +15,29 @@ export class App extends Component {
     super(props);
     // Bind events
     this.handleButtonPress = this.handleButtonPress.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleKeyDown(event) {
+    // Click the submit-button if enter key is pressed. (Enter key is key number 13)
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      this.handleButtonPress();
+    }
+  }
+  handleSubmit(event) {
+    event.preventDefault();
+    this.handleButtonPress();
   }
 
   handleButtonPress() {
     // Find the text in textField via the React ref
     const comment = ReactDOM.findDOMNode(this.refs.textInputComment).value.trim();
+    // Insert Comment
     Meteor.call('comments.insert', comment, FlowRouter.getParam('lectureName'));
+    // Clear form
+    ReactDOM.findDOMNode(this.refs.textInputComment).value = '';
   }
 
   renderComments() {
@@ -46,7 +63,7 @@ export class App extends Component {
           </div>
           <div className="comments">
             <form className="form">
-              <input type="text" ref="textInputComment" className="commentInput" placeholder="Type to add new comment" />
+              <input type="text" ref="textInputComment" className="commentInput" placeholder="Type to add new comment" onKeyDown={this.handleKeyDown} onSubmit={this.handleSubmit} />
               <button type="button" onClick={this.handleButtonPress} className="btn btn-primary btn-lg">Submit</button>
             </form>
             <ul>
