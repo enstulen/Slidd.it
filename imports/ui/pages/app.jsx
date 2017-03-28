@@ -45,7 +45,7 @@ export class App extends Component {
   renderComments() {
     // Render all comments.
     return this.props.comments.map((comment) => (
-      <Comment key={comment._id} comment={comment} />
+      <Comment key={comment._id} comment={comment} createdAt={comment.createdAt} />
     ));
   }
   render() {
@@ -69,9 +69,11 @@ export class App extends Component {
               <input type="text" ref="textInputComment" className="commentInput" placeholder="Type to add new comment" onKeyDown={this.handleKeyDown} onSubmit={this.handleSubmit} />
               <button type="button" onClick={this.handleButtonPress} className="btn btn-primary btn-lg">Submit</button>
             </form>
-            <ul>
-              {this.renderComments()}
-            </ul>
+            <table id="mytable" className="table table-striped">
+              <tbody>
+                {this.renderComments()}
+              </tbody>
+            </table>
           </div>
         </div></center>
       </div>

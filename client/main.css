@@ -148,3 +148,15 @@ button.invisibleButton {
   height: 49px;
   outline: none;
 }
+#mytable {
+  width:60%%;
+  margin-top:30px;
+}
+#mytable .left {
+  text-align:right;
+  padding-right:30px;
+}
+#mytable .right {
+  text-align:left;
+  padding-left:30px;
+}
