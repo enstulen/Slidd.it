@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import Lecture from './Lecture.jsx';
@@ -48,3 +48,7 @@ export default class NavbarHeader extends Component {
     );
   }
 }
+
+NavbarHeader.propTypes = {
+  lectures: PropTypes.array.isRequired,
+};

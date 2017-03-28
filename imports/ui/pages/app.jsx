@@ -3,13 +3,13 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 
-
 import SliderWrapper from '../SliderWrapper';
 import { CurrentUser } from '../../startup/xUser';
 import NavbarHeader from '../NavbarHeader';
 import GaugeWrapper from '../GaugeWrapper';
 import Comment from '../components/comment';
 
+// App component for showing current lecture with slider, comment section and gauge.
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -22,11 +22,13 @@ export class App extends Component {
   handleKeyDown(event) {
     // Click the submit-button if enter key is pressed. (Enter key is key number 13)
     if (event.keyCode === 13) {
+      // Prevent default behaviour.
       event.preventDefault();
       this.handleButtonPress();
     }
   }
   handleSubmit(event) {
+    // Prevent default behaviour.
     event.preventDefault();
     this.handleButtonPress();
   }
@@ -41,8 +43,9 @@ export class App extends Component {
   }
 
   renderComments() {
+    // Render all comments.
     return this.props.comments.map((comment) => (
-      <Comment key={comment._id} comment={comment} />
+      <Comment key={comment._id} comment={comment} createdAt={comment.createdAt} />
     ));
   }
   render() {
@@ -66,9 +69,11 @@ export class App extends Component {
               <input type="text" ref="textInputComment" className="commentInput" placeholder="Type to add new comment" onKeyDown={this.handleKeyDown} onSubmit={this.handleSubmit} />
               <button type="button" onClick={this.handleButtonPress} className="btn btn-primary btn-lg">Submit</button>
             </form>
-            <ul>
-              {this.renderComments()}
-            </ul>
+            <table id="mytable" className="table table-striped">
+              <tbody>
+                {this.renderComments()}
+              </tbody>
+            </table>
           </div>
         </div></center>
       </div>
@@ -77,6 +82,7 @@ export class App extends Component {
 }
 
 export class Main extends Component {
+  // Register user when the component is mounted.
   componentWillMount() {
     CurrentUser.registerUser(FlowRouter.getParam('lectureName'));
   }
@@ -89,6 +95,8 @@ export class Main extends Component {
   }
 }
 
+// // // // // PropTypes // // // // //
+
 App.propTypes = {
   sliderValues: PropTypes.array.isRequired,
 };
@@ -98,5 +106,5 @@ Main.propTypes = {
 };
 
 NavbarHeader.propTypes = {
-    lectures: PropTypes.array.isRequired,
+  lectures: PropTypes.array.isRequired,
 };
