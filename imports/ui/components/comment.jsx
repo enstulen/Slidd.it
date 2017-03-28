@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 
-// Task component - represents a single todo item
+// Comment component - represents a single comment item
 export default class Comment extends Component {
   render() {
     return (
