@@ -6,7 +6,6 @@ import { Lectures } from '../../api/lectures/lectures.js';
 // Welcome container
 export default WelcomeContainer = createContainer(() => {
   // Subscriptions
-  Meteor.subscribe('sliderValues.all');
   Meteor.subscribe('lectures.all');
 
   // Get current lecture
@@ -15,7 +14,5 @@ export default WelcomeContainer = createContainer(() => {
   return {
     // Finds all lectures.
     lectures: Lectures.find({}).fetch(),
-    // Finds all sliderValues from specific lecture.
-    sliderValues: SliderValues.find({ lectureName }).fetch(),
   };
 }, Welcome);
