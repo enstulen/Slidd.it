@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
+import { Lectures } from '../../api/lectures/lectures.js';
 
 import SliderWrapper from '../SliderWrapper';
 import { CurrentUser } from '../../startup/xUser';
@@ -17,6 +18,10 @@ export class App extends Component {
     this.handleButtonPress = this.handleButtonPress.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  componentDidMount() {
+    Meteor.subscribe('lectures');
+    Meteor.call('lectures.insert', FlowRouter.getParam('lectureName'));
   }
 
   handleKeyDown(event) {
@@ -48,6 +53,7 @@ export class App extends Component {
       <Comment key={comment._id} comment={comment} createdAt={comment.createdAt} />
     ));
   }
+
   render() {
     return (
       <div>
@@ -111,6 +117,7 @@ export class Main extends Component {
   componentWillMount() {
     CurrentUser.registerUser(FlowRouter.getParam('lectureName'));
   }
+
   render() {
     return (
       <div>
@@ -124,6 +131,7 @@ export class Main extends Component {
 
 App.propTypes = {
   sliderValues: PropTypes.array.isRequired,
+  lectures: PropTypes.array.isRequired,
 };
 
 Main.propTypes = {
