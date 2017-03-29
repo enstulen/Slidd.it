@@ -61,22 +61,36 @@ export class App extends Component {
           <div className="gauge">
             <GaugeWrapper sliderValues={this.props.sliderValues} />
           </div>
-          <div className="slider">
-            <SliderWrapper />
-          </div>
-          <div className="input-group">
-            <input type="text" ref="textInputComment" className="form-control" placeholder="Type to add new comment" onKeyDown={this.handleKeyDown} onSubmit={this.handleSubmit} />
-            <span className="input-group-btn">
-              <button onClick={this.handleButtonPress} className="btn btn-default" type="button">Submit</button>
-            </span>
-          </div>
-          <div className="comments">
-            <table id="mytable" className="table table-striped">
+          <div id="gaugeText">
+            <table id="gaugeTable">
               <tbody>
-                {this.renderComments()}
+                <td className="gaugeLeftText">Slow</td>
+                <td className="gaugeMiddleText"><h2>Average</h2></td>
+                <td className="gaugeRightText">Fast</td>
               </tbody>
             </table>
           </div>
+          <div className="slider">
+            <SliderWrapper />
+          </div>
+          <div className="panel panel-default">
+            <div className="panel-heading">Comments</div>
+            <div className="input-group">
+              <input type="text" ref="textInputComment" className="form-control" placeholder="Type to add new comment" onKeyDown={this.handleKeyDown} onSubmit={this.handleSubmit} />
+              <span className="input-group-btn">
+                <button onClick={this.handleButtonPress} className="btn btn-default" type="button">Submit</button>
+              </span>
+            </div>
+            <div className="comments">
+              <table id="mytable" className="table table-striped">
+                <tbody>
+                  {this.renderComments()}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
         </div></center>
       </div>
     );

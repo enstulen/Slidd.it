@@ -21,15 +21,20 @@ h1 {
     font-weight: 400;
     font-size: 50px
 }
+h2 {
+  margin-top: 5px;
+}
 #valueText p {
     margin: 0 auto 20px;
     text-align: center;
     font-weight: 400;
     font-size: 24px
 }
-
+.gauge {
+  margin-top: -50px;
+}
 .rangeslider {
-    margin-top: 60px;
+    margin-top: 50px;
     margin-bottom: 20px;
     position: relative;
     background: #e6e6e6
@@ -141,9 +146,16 @@ button.invisibleButton {
   height: 49px;
   outline: none;
 }
+.panel-heading {
+  text-align:left;
+}
+#gaugeText {
+  margin-top: 0px;
+}
 #mytable {
-  width:60%%;
-  margin-top:30px;
+  width:100%;
+  margin-top:0px;
+  margin-bottom: 0px;
 }
 #mytable .left {
   text-align:right;
@@ -152,4 +164,20 @@ button.invisibleButton {
 #mytable .right {
   text-align:left;
   padding-left:30px;
+}
+#gaugeTable {
+  width:400px;
+  margin-top:-60px;
+}
+#gaugeTable .gaugeLeftText {
+  text-align:left;
+  padding-left:23px;
+}
+#gaugeTable .gaugeMiddleText {
+  text-align:center;
+}
+#gaugeTable .gaugeRightText {
+  text-align:right;
+  padding-right:23px;
+
 }

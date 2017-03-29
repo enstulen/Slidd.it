@@ -31,7 +31,6 @@ export default class SliderWrapper extends Component {
         <div>
           <Slider value={value} onChange={sliderValue => this.handleSlide(sliderValue)} />
         </div>
-        <div id="valueText"><p>Value: {value} {Slider.labels}</p></div>
       </div>
     );
   }
