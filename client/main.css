@@ -120,14 +120,7 @@ form {
   margin-bottom: -10px;
   position: relative;
 }
-input.commentInput {
-  box-sizing: border-box;
-  padding: 10px 10px 10px 10px;
-  background: transparent;
-  border: none;
-  width: 90%;
-  font-size: 1em;
-}
+
 ul {
   margin: 0;
   padding: 0;
