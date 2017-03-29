@@ -12,6 +12,7 @@ export default class Lecture extends Component {
   }
 
   handleButtonPress(event) {
+    // Go to /lecture/<lectureName>
     event.preventDefault();
     const lectureName = this.props.lecture.lectureName;
     const params = {
@@ -19,6 +20,8 @@ export default class Lecture extends Component {
     };
     const routeName = 'lecture';
     FlowRouter.go(routeName, params, {});
+
+    // set the user's current site to be the correct lecture
     Meteor.call('sliderValues.updateLecture', CurrentUser.state.userID, this.props.lecture.lectureName);
   }
 

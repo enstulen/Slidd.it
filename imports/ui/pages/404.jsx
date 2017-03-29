@@ -2,9 +2,10 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import React, { Component, PropTypes } from 'react';
 import NavbarHeader from '../NavbarHeader';
 
-
+// 404 component for showing the 404 site
 export class FourOFour extends Component {
   handleButtonPress(event) {
+    // Go to the main page
     event.preventDefault();
     FlowRouter.go('/');
   }
@@ -35,6 +36,8 @@ export class FourOFourMain extends Component {
     );
   }
 }
+
+// // // // // PropTypes // // // // //
 
 FourOFourMain.propTypes = {
   content: PropTypes.element.isRequired,

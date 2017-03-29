@@ -6,6 +6,7 @@ import Lecture from './Lecture.jsx';
 export default class NavbarHeader extends Component {
 
   handleButtonPress(event) {
+    // Go to the main page
     event.preventDefault();
     FlowRouter.go('/');
   }
@@ -48,6 +49,8 @@ export default class NavbarHeader extends Component {
     );
   }
 }
+
+// // // // // PropTypes // // // // //
 
 NavbarHeader.propTypes = {
   lectures: PropTypes.array.isRequired,
