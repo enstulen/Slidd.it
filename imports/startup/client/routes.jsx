@@ -8,13 +8,16 @@ import AppContainer from '../../ui/containers/appContainer.jsx';
 import WelcomeContainer from '../../ui/containers/welcomeContainer.jsx';
 import FourOFourContainer from '../../ui/containers/404Container.jsx';
 
+// // // // // FlowRouter routes // // // // //
 
+// Inital welcome page.
 FlowRouter.route('/', {
   action() {
     mount(WelcomeMain, { content: <WelcomeContainer /> });
   },
 });
 
+// Page showing current lecture with slider, comment section and gauge.
 FlowRouter.route('/lecture/:lectureName', {
   name: 'lecture',
   action() {
@@ -22,6 +25,7 @@ FlowRouter.route('/lecture/:lectureName', {
   },
 });
 
+// 404 page, any other link goes here.
 FlowRouter.notFound = {
   action() {
     mount(FourOFourMain, { content: <FourOFourContainer /> });

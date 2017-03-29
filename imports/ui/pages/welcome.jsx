@@ -5,7 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import NavbarHeader from '../NavbarHeader';
 import { CurrentUser } from '../../startup/xUser.js';
 
-
+// Welcome component for showing welcome page.
 export class Welcome extends Component {
   constructor(props) {
     super(props);
@@ -42,9 +42,6 @@ export class Welcome extends Component {
         <div className="navbar">
           <NavbarHeader lectures={this.props.lectures} />
         </div>
-        <div>
-          {this.props.content}
-        </div>
         <center><div id="centerBox">
           <h1>Slidd.it</h1>
           <div>
@@ -71,10 +68,12 @@ export class WelcomeMain extends Component {
   }
 }
 
+// // // // // PropTypes // // // // //
+
 WelcomeMain.propTypes = {
   content: PropTypes.element.isRequired,
 };
 
 NavbarHeader.propTypes = {
-    lectures: PropTypes.array.isRequired,
+  lectures: PropTypes.array.isRequired,
 };
