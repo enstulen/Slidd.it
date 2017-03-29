@@ -13,33 +13,17 @@ if (Meteor.isServer) {
       const count = SliderValues.find().count();
 
       it('Can insert slidervalue', () => {
-        // Verify that the method does what we expected.
-        resetDatabase();
-        SliderValues.remove({});
-        SliderValues.insert('user1', 40, 'lectureName', new Date());
+        // Inserts an user, currently values are not set for unknown reason.
+        SliderValues.insert({ _id: 'user2' }, { $set: { value: 52, lectureName: 'lectureName', createdAt: new Date() } });
         assert.equal(SliderValues.find().count(), (count + 1));
       });
 
       it('Can update slidervalue', () => {
-        resetDatabase();
-        SliderValues.remove({});
-        SliderValues.insert('user2', 52, 'lectureName', new Date());
-        //SliderValues.update('userID': 'user2', 'value': 47);
-        /* Det er slidervalues.update som ikke fungerer.
-        Jeg får 2 errors, usikker på hvilken som egentlig skaper problemet.
-        Enten oppdaterer vi funksjonen på feil måte (må inkludere en modifier), 
-        eller så skjer det noe funky fordi vi tester asynkront. 
-        
-        Exception in callback of async function: TypeError: callback is not a function        
-        Error: Invalid modifier. Modifier must be an object.
-        
-        jeg har sittet med denne i 2 timer nå, så sender den videre(sorry)    */
-        SliderValues.update('user2', 47);
-        var result = SliderValues.filter(function (obj) {
-          return obj.userID === 'user2';
-        });
-
-        assert.equal(result[1], 47);
+        SliderValues.update({ _id: 'user2' }, { $set: { value: 47 } });
+        // Returns all users in database, currently only one. Returns as an array,
+        // so we choose the first and only one
+        const result = SliderValues.find().fetch()[0];
+        assert.equal(result.value, 47);
       });
     });
   });
