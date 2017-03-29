@@ -64,11 +64,13 @@ export class App extends Component {
           <div className="slider">
             <SliderWrapper />
           </div>
+          <div className="input-group">
+            <input type="text" ref="textInputComment" className="form-control" placeholder="Type to add new comment" onKeyDown={this.handleKeyDown} onSubmit={this.handleSubmit} />
+            <span className="input-group-btn">
+              <button onClick={this.handleButtonPress} className="btn btn-default" type="button">Submit</button>
+            </span>
+          </div>
           <div className="comments">
-            <form className="form">
-              <input type="text" ref="textInputComment" className="commentInput" placeholder="Type to add new comment" onKeyDown={this.handleKeyDown} onSubmit={this.handleSubmit} />
-              <button type="button" onClick={this.handleButtonPress} className="btn btn-primary btn-lg">Submit</button>
-            </form>
             <table id="mytable" className="table table-striped">
               <tbody>
                 {this.renderComments()}
