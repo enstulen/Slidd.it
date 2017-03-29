@@ -24,6 +24,12 @@ h1 {
 h2 {
   margin-top: 5px;
 }
+h3 {
+  margin-top: 30px;
+}
+h5 {
+  margin-top: -10px;
+}
 #valueText p {
     margin: 0 auto 20px;
     text-align: center;
@@ -34,7 +40,7 @@ h2 {
   margin-top: -50px;
 }
 .rangeslider {
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 20px;
     position: relative;
     background: #e6e6e6
@@ -165,6 +171,24 @@ button.invisibleButton {
   text-align:left;
   padding-left:30px;
 }
+#sliderText {
+  margin-top: -15px;
+}
+#sliderTable {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#sliderTable .sliderLeftText {
+  text-align:left;
+  padding-left:10px;
+}
+#sliderTable .sliderMiddleText {
+  text-align:center;
+}
+#sliderTable .sliderRightText {
+  text-align:right;
+  padding-right:10px;
+}
 #gaugeTable {
   width:400px;
   margin-top:-60px;
@@ -179,5 +203,4 @@ button.invisibleButton {
 #gaugeTable .gaugeRightText {
   text-align:right;
   padding-right:23px;
-
 }

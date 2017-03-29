@@ -73,6 +73,15 @@ export class App extends Component {
           <div className="slider">
             <SliderWrapper />
           </div>
+          <div id="sliderText">
+            <table id="sliderTable">
+              <tbody>
+                <td className="sliderLeftText">Slow</td>
+                <td className="sliderMiddleText">Slide to indicate lecture-speed</td>
+                <td className="sliderRightText">Fast</td>
+              </tbody>
+            </table>
+          </div>
           <div className="panel panel-default">
             <div className="panel-heading">Comments</div>
             <div className="input-group">
