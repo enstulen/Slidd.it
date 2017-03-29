@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
-
+import { Lectures } from '../../api/lectures/lectures.js';
 
 import SliderWrapper from '../SliderWrapper';
 import { CurrentUser } from '../../startup/xUser';
@@ -10,11 +10,16 @@ import NavbarHeader from '../NavbarHeader';
 import GaugeWrapper from '../GaugeWrapper';
 import Comment from '../components/comment';
 
+
 export class App extends Component {
   constructor(props) {
     super(props);
     // Bind events
     this.handleButtonPress = this.handleButtonPress.bind(this);
+  }
+  componentDidMount() {
+    Meteor.subscribe('lectures');
+    Meteor.call('lectures.insert', FlowRouter.getParam('lectureName'));
   }
 
   handleButtonPress() {
@@ -28,6 +33,7 @@ export class App extends Component {
       <Comment key={comment._id} comment={comment} />
     ));
   }
+
   render() {
     return (
       <div>
@@ -63,6 +69,7 @@ export class Main extends Component {
   componentWillMount() {
     CurrentUser.registerUser(FlowRouter.getParam('lectureName'));
   }
+
   render() {
     return (
       <div>
@@ -74,12 +81,9 @@ export class Main extends Component {
 
 App.propTypes = {
   sliderValues: PropTypes.array.isRequired,
+  lectures: PropTypes.array.isRequired,
 };
 
 Main.propTypes = {
   content: PropTypes.element.isRequired,
-};
-
-NavbarHeader.propTypes = {
-    lectures: PropTypes.array.isRequired,
 };

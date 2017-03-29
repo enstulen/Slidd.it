@@ -3,10 +3,10 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import NavbarHeader from '../NavbarHeader';
+import { CurrentUser } from '../../startup/xUser.js';
 
 
 export class Welcome extends Component {
-
   constructor(props) {
     super(props);
     // Bind events
@@ -24,8 +24,7 @@ export class Welcome extends Component {
   handleButtonPress() {
     // Find the text in textField via the React ref
     const lectureName = ReactDOM.findDOMNode(this.refs.textInput).value.trim();
-    // Insert lecture in database
-    Meteor.call('lectures.insert', lectureName);
+
     // Clear form
     ReactDOM.findDOMNode(this.refs.textInput).value = '';
     // Go to lecture page
@@ -34,6 +33,7 @@ export class Welcome extends Component {
     };
     const routeName = 'lecture';
     FlowRouter.go(routeName, params, {});
+    Meteor.call('sliderValues.updateLecture', CurrentUser.state.userID, lectureName);
   }
 
   render() {
