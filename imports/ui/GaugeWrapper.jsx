@@ -21,8 +21,8 @@ export default class GaugeWrapper extends Component {
       for (let i = 0; i < array.length; i += 1) {
         total += array[i].value;
       }
-      const avarage = total / array.length;
-      return Math.round(avarage);
+      const average = total / array.length;
+      return Math.round(average);
     }
     return 0;
   }
