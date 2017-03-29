@@ -165,11 +165,11 @@ button.invisibleButton {
 }
 #mytable .left {
   text-align:right;
-  padding-right:30px;
+  padding-right:10px;
 }
 #mytable .right {
   text-align:left;
-  padding-left:30px;
+  padding-left:10px;
 }
 #sliderText {
   margin-top: -15px;
