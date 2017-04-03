@@ -21,15 +21,26 @@ h1 {
     font-weight: 400;
     font-size: 50px
 }
+h2 {
+  margin-top: 5px;
+}
+h3 {
+  margin-top: 30px;
+}
+h5 {
+  margin-top: -10px;
+}
 #valueText p {
     margin: 0 auto 20px;
     text-align: center;
     font-weight: 400;
     font-size: 24px
 }
-
+.gauge {
+  margin-top: -50px;
+}
 .rangeslider {
-    margin-top: 60px;
+    margin-top: 30px;
     margin-bottom: 20px;
     position: relative;
     background: #e6e6e6
@@ -91,5 +102,105 @@ h1 {
 }
 #centerBox {
     margin: 0;
-    width: 60%;
+    width: 70%;
+}
+.liButton {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  width:100%;
+  text-align: left;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #000000;
+  background: #ffffff;
+  padding: 5px 15px 5px 15px;
+  border: solid #f8f8f8 0px;
+  text-decoration: none;
+}
+.liButton:hover {
+  background: #f8f8f8;
+  text-decoration: none;
+}
+.comments {
+  margin: 0 auto;
+  min-height: 100%;
+  background: transparent;
+}
+form {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  position: relative;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+li.commentList {
+  position: relative;
+  list-style: none;
+  padding: 15px;
+  border-bottom: #eee solid 1px;
+}
+
+button.invisibleButton {
+  background: transparent;
+  border: none;
+  font-size:0;
+  top: 50%;
+  height: 49px;
+  outline: none;
+}
+.panel-heading {
+  text-align:left;
+}
+#gaugeText {
+  margin-top: 0px;
+}
+#mytable {
+  width:100%;
+  margin-top:0px;
+  margin-bottom: 0px;
+}
+#mytable .left {
+  text-align:right;
+  padding-right:10px;
+}
+#mytable .right {
+  text-align:left;
+  padding-left:10px;
+}
+#sliderText {
+  margin-top: -15px;
+}
+#sliderTable {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#sliderTable .sliderLeftText {
+  text-align:left;
+  padding-left:10px;
+}
+#sliderTable .sliderMiddleText {
+  text-align:center;
+}
+#sliderTable .sliderRightText {
+  text-align:right;
+  padding-right:10px;
+}
+#gaugeTable {
+  width:400px;
+  margin-top:-60px;
+}
+#gaugeTable .gaugeLeftText {
+  text-align:left;
+  padding-left:23px;
+}
+#gaugeTable .gaugeMiddleText {
+  text-align:center;
+}
+#gaugeTable .gaugeRightText {
+  text-align:right;
+  padding-right:23px;
 }
