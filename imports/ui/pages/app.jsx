@@ -19,10 +19,6 @@ export class App extends Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  componentDidMount() {
-    Meteor.subscribe('lectures');
-    Meteor.call('lectures.insert', FlowRouter.getParam('lectureName'));
-  }
 
   handleKeyDown(event) {
     // Click the submit-button if enter key is pressed. (Enter key is key number 13)
@@ -58,7 +54,7 @@ export class App extends Component {
     return (
       <div>
         <div className="navbar">
-          <NavbarHeader lectures={this.props.lectures} />
+          <NavbarHeader lectures={this.props.activeLectures} />
         </div>
         <center><div id="centerBox">
           <div>
@@ -132,6 +128,7 @@ export class Main extends Component {
 App.propTypes = {
   sliderValues: PropTypes.array.isRequired,
   lectures: PropTypes.array.isRequired,
+  activeLectures: PropTypes.array.isRequired,
 };
 
 Main.propTypes = {

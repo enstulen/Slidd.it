@@ -7,39 +7,37 @@ import { SliderValues } from './slidervalues.js';
 if (Meteor.isServer) {
   describe('SliderValues', () => {
     describe('Methods', () => {
+      // Empties database
       resetDatabase();
       SliderValues.remove({});
-      // The database should be empty while we do this right?
-      const count = SliderValues.find().count();
 
-      it('Can insert slidervalue', () => {
-        // Verify that the method does what we expected.
-        resetDatabase();
-        SliderValues.remove({});
-        SliderValues.insert('user1', 40, 'lectureName', new Date());
+      // Sets values to be tested
+      const count = SliderValues.find().count();
+      const userName = 'user2';
+      const lectureName = 'lectureName';
+
+      it('Can insert sliderValue', () => {
+        Meteor.call('sliderValues.insert', userName, 52, lectureName, new Date());
+        // Returns a collection
+        const result = SliderValues.find().fetch()[0];
+
+        // tests if the database contains 1 element with the same values we sent in
         assert.equal(SliderValues.find().count(), (count + 1));
+        assert.equal(result.userID, userName);
+        assert.equal(result.value, 52);
+        assert.equal(result.lectureName, lectureName);
       });
 
-      it('Can update slidervalue', () => {
-        resetDatabase();
-        SliderValues.remove({});
-        SliderValues.insert('user2', 52, 'lectureName', new Date());
-        //SliderValues.update('userID': 'user2', 'value': 47);
-        /* Det er slidervalues.update som ikke fungerer.
-        Jeg får 2 errors, usikker på hvilken som egentlig skaper problemet.
-        Enten oppdaterer vi funksjonen på feil måte (må inkludere en modifier), 
-        eller så skjer det noe funky fordi vi tester asynkront. 
-        
-        Exception in callback of async function: TypeError: callback is not a function        
-        Error: Invalid modifier. Modifier must be an object.
-        
-        jeg har sittet med denne i 2 timer nå, så sender den videre(sorry)    */
-        SliderValues.update('user2', 47);
-        var result = SliderValues.filter(function (obj) {
-          return obj.userID === 'user2';
-        });
+      it('Can update sliderValue', () => {
+        Meteor.call('sliderValues.update', userName, 47);
 
-        assert.equal(result[1], 47);
+        const result = SliderValues.find().fetch()[0];
+
+        // Tests that only the value we updated got updated
+        assert.equal(result.userID, userName);
+        assert.equal(result.value, 47);
+        assert.equal(SliderValues.find().count(), (count + 1));
+        assert.equal(result.lectureName, 'lectureName');
       });
     });
   });

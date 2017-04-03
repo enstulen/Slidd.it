@@ -16,9 +16,25 @@ export default AppContainer = createContainer(() => {
   // Get current lecture
   const lectureName = FlowRouter.getParam('lectureName');
 
+  // add the lecture to the lecture collection
+  Meteor.call('lectures.insert', lectureName);
+
+  // Places all active lectures in the array "activeLectures"
+  const activeLectures = [];
+  const namesOfActiveLectures = [];
+  SliderValues.find({}).fetch().forEach(function(element) {
+    const lecture = Lectures.find({ lectureName: element.lectureName }).fetch()[0];
+    if (namesOfActiveLectures.indexOf(lecture.lectureName) < 0) {
+      activeLectures.push(lecture);
+      namesOfActiveLectures.push(lecture.lectureName);
+    }
+  });
+
   return {
     // Finds all lectures.
     lectures: Lectures.find({}).fetch(),
+    // Sends all active lectures to the Welcome component.
+    activeLectures,
     // Finds all sliderValues from specific lecture.
     sliderValues: SliderValues.find({ lectureName }).fetch(),
     // Finds all comments from specific lecture sorted by the latest comment first.
