@@ -18,12 +18,16 @@ Meteor.methods({
     check(value, Number);
     check(lectureName, String);
     check(createdAt, Date);
-    SliderValues.insert({
-      userID,
-      value,
-      lectureName,
-      createdAt,
-    });
+    const doc = SliderValues.findOne({ userID });
+    if (!doc) {
+      SliderValues.insert({
+        userID,
+        value,
+        lectureName,
+        createdAt,
+      });
+    }
+
   },
   // sliderValues update method. Updates the speed of the lecture for a certain userID.
   // userID = Unique ID for each user.
