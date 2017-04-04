@@ -25,7 +25,16 @@ export default class Lecture extends Component {
     Meteor.call('sliderValues.updateLecture', CurrentUser.state.userID, this.props.lecture.lectureName);
   }
 
+
   render() {
+    if (this.props.frontPage) {
+      return (
+        <tr>
+          <td className="left"><h4>{this.props.lecture.lectureName}</h4> </td>
+          <td className="right"><button onClick={this.handleButtonPress} className="btn btn-success btn-lg">Select</button></td>
+        </tr>
+      );
+    }
     return (
       <li><button className="liButton" onClick={this.handleButtonPress}>{this.props.lecture.lectureName}</button></li>
     );
@@ -34,6 +43,11 @@ export default class Lecture extends Component {
 
 // // // // // PropTypes // // // // //
 
+Lecture.defaultProps = {
+  frontPage: false,
+};
+
 Lecture.propTypes = {
+  frontPage: PropTypes.bool,
   lecture: PropTypes.object.isRequired,
 };
