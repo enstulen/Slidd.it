@@ -42,6 +42,20 @@ export class Welcome extends Component {
     ));
   }
 
+  goToExampleClass(event) {
+    // Go to /lecture/Example class
+    event.preventDefault();
+    const lectureName = 'Example class';
+    const params = {
+      lectureName,
+    };
+    const routeName = 'lecture';
+    FlowRouter.go(routeName, params, {});
+
+    // set the user's current site to be the correct lecture
+    Meteor.call('sliderValues.updateLecture', CurrentUser.state.userID, lectureName);
+  }
+
   render() {
     return (
       <div>
@@ -51,7 +65,8 @@ export class Welcome extends Component {
         <center><div id="centerBox">
           <img className="img-responsive" width="50%" alt="Slidd.it" src="/logo3.png" />
           <div className="frontpage-text">
-            <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but</p>
+            <p>Slidd.it is a realtime application that lets you tell your lectuerer how fast the lecture is going and lets you ask questions without interrupting the class.</p>
+            <p>Enter a subject or choose an active lecture to get started.</p>
           </div>
           <div className="enter-subject">
             <div className="form-group">
@@ -66,6 +81,10 @@ export class Welcome extends Component {
             <table id="lectures-table" className="table table-hover">
               <tbody>
                 {this.renderLectures()}
+                <tr>
+                  <td className="left"><h4>Example class</h4> </td>
+                  <td className="right"><button onClick={this.goToExampleClass} className="btn btn-success btn-lg">Select</button></td>
+                </tr>
               </tbody>
             </table>
           </div>

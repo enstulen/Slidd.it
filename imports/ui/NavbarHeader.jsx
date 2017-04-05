@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Meteor } from 'meteor/meteor';
+import { CurrentUser } from '../startup/xUser.js';
 
 import Lecture from './Lecture.jsx';
 
@@ -12,8 +14,22 @@ export default class NavbarHeader extends Component {
   }
   renderLectures() {
     return this.props.lectures.map((lecture) => (
-      <Lecture key={lecture._id} lecture={lecture} />
+      <Lecture key={lecture._id} lecture={lecture}/>
     ));
+  }
+
+  goToExampleClass(event) {
+    // Go to /lecture/Example class
+    event.preventDefault();
+    const lectureName = 'Example class';
+    const params = {
+      lectureName,
+    };
+    const routeName = 'lecture';
+    FlowRouter.go(routeName, params, {});
+
+    // set the user's current site to be the correct lecture
+    Meteor.call('sliderValues.updateLecture', CurrentUser.state.userID, lectureName);
   }
 
   render() {
@@ -39,6 +55,7 @@ export default class NavbarHeader extends Component {
                   <a className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Active lectures <span className="caret" /></a>
                   <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
                     {this.renderLectures()}
+                    <li><button className="liButton" onClick={this.goToExampleClass}>Example class</button></li>
                   </ul>
                 </li>
               </ul>
