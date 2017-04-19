@@ -28,7 +28,7 @@ export default class Lecture extends Component {
 
   render() {
     if (this.props.lecture.lectureName === 'Example class') {
-      return ({ null });
+      return null;
     }
     if (this.props.frontPage) {
       return (
