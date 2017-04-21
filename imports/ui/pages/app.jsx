@@ -67,7 +67,7 @@ export class App extends Component {
             <table id="gaugeTable">
               <tbody>
                 <td className="gaugeLeftText">Slow</td>
-                <td className="gaugeMiddleText"><h2>Average</h2></td>
+                <td className="gaugeMiddleText"><h2>Class average</h2></td>
                 <td className="gaugeRightText">Fast</td>
               </tbody>
             </table>
