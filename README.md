@@ -26,7 +26,10 @@ This application was a school project in the course TDT4140 at the Norwegian Uni
 To run the application locally, type `meteor` into the console. The application is now running at *localhost:3000*.
 
 ## Architecture
-Routing with [Flow router](https://github.com/kadirahq/flow-router), unit tests with [Mocha](https://mochajs.org/) and [Jest](https://facebook.github.io/jest/) and snapshot tests with [react-test-renderer](https://www.itdagene.no/frontpage/joblistings) and linting with ESLint 6 using [Airbnb](https://www.npmjs.com/package/eslint-config-airbnb)s rules
+Routing with [Flow router](https://github.com/kadirahq/flow-router), unit tests with [Mocha](https://mochajs.org/) and [Jest](https://facebook.github.io/jest/) and snapshot tests with [react-test-renderer](https://www.itdagene.no/frontpage/joblistings) and linting with ESLint 6 using [Airbnb](https://www.npmjs.com/package/eslint-config-airbnb)s rules.
+
+#### Note
+Every two minutes a crone job runs on the server, deleting any inactive users and any active lectures without an active user. Because of this we have an example class which is always present, regardless of the number of active users.
 
 ## Testing
 We use two frameworks for testing:
