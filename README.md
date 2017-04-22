@@ -1,3 +1,5 @@
+# Slidd.it
+
 Slidd.it - lectures at your pace is an intuitive and lightweight web application where users can
 give feedback to the lecturer regarding the pace of the lecture. The user does this by sliding a slider
 and can see the avarage of all users slider values in the 'meter'. The lecturer will adjust the pace
@@ -9,29 +11,28 @@ You can check out the application live at Slidd.it
 
 This application was a school project in the course TDT4140 at the Norwegian University of Science and Technology.
 
-The application was made using Meteor and React, and has the following dependencies:
-    "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.22.0",
-    "babel-runtime": "^6.18.0",
-    "eslint": "^3.15.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-meteor": "^4.0.1",
-    "eslint-plugin-react": "^6.9.0",
-    "meteor-node-stubs": "~0.2.0",
-    "mocha": "^3.2.0",
-    "react": "^15.4.2",
-    "react-addons-pure-render-mixin": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-mount": "^0.1.3",
-    "react-mounter": "^1.2.0",
-    "react-rangeslider": "^2.0.1",
-    "react-slider": "^0.7.0",
-    "react-svg-gauge": "^1.0.4",
-    "react-tools": "^0.13.3",
-    "webpack": "^2.2.1"
-    
-The code is written to ES6 standards using Airbnb's rules.
+## Requirements
+- [Node.js v7.7.4](https://nodejs.org/en/)
+- [Node package manager v4.1.2](https://www.npmjs.com/get-npm?utm_source=house&utm_medium=homepage&utm_campaign=free%20orgs&utm_term=Install%20npm)
+- [Meteor v1.4.3.1 ](https://www.meteor.com/install) `curl https://install.meteor.com/ | sh`
+- [React v15.4.2](https://facebook.github.io/react/) `meteor npm install --save react react-dom`
+
+## Setup
+- After making sure you have all the requrements, run: `git@github.com:enstulen/Slidd.it.git` in the console
+- This will make a folder called 'Slidd.it' in your system
+- While in this folder, run `npm install` to get all dependencies
+
+## Running
+To run the application locally, type `meteor` into the console. The application is now running at *localhost:3000*.
+
+## Architecture
+[Flow router](https://github.com/kadirahq/flow-router)
+
+## Testing
+We use two frameworks(sorry!) for testing:
+
+### Mocha
+Run `meteor test --driver-package practicalmeteor:mocha` to run **Mocha** tests
+
+### Jest
+Run `npm test` to run **jest** tests
