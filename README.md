@@ -31,8 +31,7 @@ Routing with [Flow router](https://github.com/kadirahq/flow-router), unit tests 
 ## Testing
 We use two frameworks for testing:
 
-### Mocha
-Run `meteor test --driver-package practicalmeteor:mocha` to run **Mocha** tests
+| Mocha  | Jest                                                       |
+| ----------------------------------------------------|------------- |
+| `meteor test --driver-package practicalmeteor:mocha`  | `npm test`  |
 
-### Jest
-Run `npm test` to run **jest** tests
