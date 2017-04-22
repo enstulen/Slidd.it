@@ -37,6 +37,7 @@ export class Welcome extends Component {
   }
 
   renderLectures() {
+    console.log(this.props.lectures);
     return this.props.lectures.map((lecture) => (
       <Lecture key={lecture._id} lecture={lecture} frontPage />
     ));

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Comment component Renders correctly 1`] = `
+<tr>
+  <td
+    className="right"
+  >
+     
+  </td>
+  <td
+    className="left"
+  >
+     
+    11
+    :
+    15
+        
+    4/22/2017
+     
+  </td>
+</tr>
+`;

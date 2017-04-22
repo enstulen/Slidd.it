@@ -7,7 +7,7 @@ import { Lectures } from '../../api/lectures/lectures.js';
 import { Comments } from '../../api/comments/comments';
 
 // App container
-export default AppContainer = createContainer(() => {
+export default createContainer(() => {
   // Subscriptions
   Meteor.subscribe('sliderValues.all');
   Meteor.subscribe('lectures.all');

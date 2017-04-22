@@ -5,7 +5,7 @@ import { Lectures } from '../../api/lectures/lectures.js';
 import { SliderValues } from '../../api/sliderValues/slidervalues.js';
 
 // Welcome container
-export default WelcomeContainer = createContainer(() => {
+export default createContainer(() => {
   // Subscriptions
   Meteor.subscribe('lectures.all');
   Meteor.subscribe('sliderValues.all');
