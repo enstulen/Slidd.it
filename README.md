@@ -26,10 +26,10 @@ This application was a school project in the course TDT4140 at the Norwegian Uni
 To run the application locally, type `meteor` into the console. The application is now running at *localhost:3000*.
 
 ## Architecture
-[Flow router](https://github.com/kadirahq/flow-router)
+Routing with [Flow router](https://github.com/kadirahq/flow-router), unit tests with [Mocha](https://mochajs.org/) and [Jest](https://facebook.github.io/jest/) and snapshot tests with [react-test-renderer](https://www.itdagene.no/frontpage/joblistings) and linting with ESLint 6 using [Airbnb](https://www.npmjs.com/package/eslint-config-airbnb)s rules
 
 ## Testing
-We use two frameworks(sorry!) for testing:
+We use two frameworks for testing:
 
 ### Mocha
 Run `meteor test --driver-package practicalmeteor:mocha` to run **Mocha** tests
