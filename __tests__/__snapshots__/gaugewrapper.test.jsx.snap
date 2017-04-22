@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GaugeWrapper component Renders correctly 1`] = `
+<div>
+  <svg
+    height="100%"
+    style={
+      Object {
+        "height": 320,
+        "left": 0,
+        "overflow": "hidden",
+        "position": "relative",
+        "top": 0,
+        "width": 500,
+      }
+    }
+    version="1.1"
+    width="100%"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <filter
+        id="g3-inner-shadow"
+      >
+        <feOffset
+          dx="0"
+          dy="3"
+        />
+        <feGaussianBlur
+          result="offset-blur"
+          stdDeviation="5"
+        />
+        <feComposite
+          in="SourceGraphic"
+          in2="offset-blur"
+          operator="out"
+          result="inverse"
+        />
+        <feFlood
+          floodColor="black"
+          floodOpacity="0.2"
+          result="color"
+        />
+        <feComposite
+          in="color"
+          in2="inverse"
+          operator="in"
+          result="shadow"
+        />
+        <feComposite
+          in="shadow"
+          in2="SourceGraphic"
+          operator="over"
+        />
+      </filter>
+    </defs>
+    <path
+      d="M125,256 L50,256 A200,200 0 0 1 450,256 L375,256 A125,125 0 0 0 125,256 Z "
+      fill="#edebeb"
+      filter="url(#g3-inner-shadow)"
+      stroke="none"
+    />
+    <path
+      d="M125,256 L50,256 A200,200 0 0 1 NaN,NaN LNaN,NaN A125,125 0 0 0 125,256 Z "
+      fill="#fe0400"
+      filter="url(#g3-inner-shadow)"
+      stroke="none"
+    />
+    <text
+      style={
+        Object {
+          "fill": "#999999",
+          "fillOpacity": 1,
+          "fontSize": 50,
+          "fontStretch": "normal",
+          "fontStyle": "normal",
+          "fontVariant": "normal",
+          "fontWeight": "bold",
+          "lineHeight": "normal",
+          "stroke": "none",
+          "textAnchor": "middle",
+        }
+      }
+      textAnchor="middle"
+      x={250}
+      y={40}
+    >
+      
+    </text>
+    <text
+      style={
+        Object {
+          "fill": "#010101",
+          "fillOpacity": 1,
+          "fontSize": 100,
+          "fontStretch": "normal",
+          "fontStyle": "normal",
+          "fontVariant": "normal",
+          "fontWeight": "bold",
+          "lineHeight": "normal",
+          "stroke": "none",
+          "textAnchor": "middle",
+        }
+      }
+      textAnchor="middle"
+      x={250}
+      y={256}
+    >
+      NaN
+    </text>
+    <text
+      style={
+        Object {
+          "fill": "#999999",
+          "fillOpacity": 1,
+          "fontSize": 20,
+          "fontStretch": "normal",
+          "fontStyle": "normal",
+          "fontVariant": "normal",
+          "fontWeight": "normal",
+          "lineHeight": "normal",
+          "stroke": "none",
+          "textAnchor": "middle",
+        }
+      }
+      textAnchor="middle"
+      x={87.5}
+      y={281}
+    >
+      0
+    </text>
+    <text
+      style={
+        Object {
+          "fill": "#999999",
+          "fillOpacity": 1,
+          "fontSize": 20,
+          "fontStretch": "normal",
+          "fontStyle": "normal",
+          "fontVariant": "normal",
+          "fontWeight": "normal",
+          "lineHeight": "normal",
+          "stroke": "none",
+          "textAnchor": "middle",
+        }
+      }
+      textAnchor="middle"
+      x={412.5}
+      y={281}
+    >
+      100
+    </text>
+  </svg>
+</div>
+`;

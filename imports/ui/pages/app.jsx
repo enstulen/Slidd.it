@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
-import { Lectures } from '../../api/lectures/lectures.js';
 
 import SliderWrapper from '../SliderWrapper';
 import { CurrentUser } from '../../startup/xUser';
