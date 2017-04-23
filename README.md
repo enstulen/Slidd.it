@@ -7,7 +7,7 @@ of the lecture based on the meter.
 
 If the lecture is going too fast, set the meter to low and the lecturer will explain the concept more throughoutly and slowly,
 and the other way around.
-You can check out the application live at Slidd.it
+You can check out the application live at [Slidd.it](http://www.slidd.it/)
 
 This application was a school project in the course TDT4140 at the Norwegian University of Science and Technology.
 
