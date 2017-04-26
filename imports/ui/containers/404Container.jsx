@@ -23,7 +23,7 @@ export default createContainer(() => {
   });
 
   return {
-    // Sends all active lectures to the Welcome component.
+    // Sends all active lectures to the 404 component.
     lectures: activeLectures,
   };
 }, FourOFour);
