@@ -73,7 +73,7 @@ h5 {
 }
 .rangeslider-horizontal .rangeslider__fill {
     height: 100%;
-    background: #27ae60;
+    background: #5cb85c;
     border-radius: 10px;
     top: 0
 }
@@ -231,6 +231,10 @@ button.invisibleButton {
    border-width: 0px;
    width: 100%;
    margin-top: -15px;
+ }
+ #hen-button {
+   background-color: #8BC9FF;
+   border-width: 0px;
  }
 
  .enter-subject {

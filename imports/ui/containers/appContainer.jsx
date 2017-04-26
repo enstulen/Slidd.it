@@ -35,7 +35,7 @@ export default createContainer(() => {
   return {
     // Finds all lectures.
     lectures: Lectures.find({}).fetch(),
-    // Sends all active lectures to the Welcome component.
+    // Sends all active lectures to the App component.
     activeLectures,
     // Finds all sliderValues from specific lecture.
     sliderValues: SliderValues.find({ lectureName }).fetch(),
