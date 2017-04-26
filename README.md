@@ -18,7 +18,7 @@ This application was a school project in the course TDT4140 at the Norwegian Uni
 - [React v15.4.2](https://facebook.github.io/react/) `meteor npm install --save react react-dom`
 
 ## Setup
-- After making sure you have all the requrements, run: `git@github.com:enstulen/Slidd.it.git` in the console
+- After making sure you have all the requrements, run: `git clone https://github.com/enstulen/Slidd.it.git` in the console
 - This will make a folder called 'Slidd.it' in your system
 - While in this folder, run `npm install` to get all dependencies
 
