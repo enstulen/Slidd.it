@@ -5,7 +5,7 @@ import { Lectures } from '../../api/lectures/lectures.js';
 import { SliderValues } from '../../api/sliderValues/slidervalues.js';
 
 // Welcome container
-export default WelcomeContainer = createContainer(() => {
+export default createContainer(() => {
   // Subscriptions
   Meteor.subscribe('lectures.all');
   Meteor.subscribe('sliderValues.all');
@@ -15,9 +15,11 @@ export default WelcomeContainer = createContainer(() => {
   const namesOfActiveLectures = [];
   SliderValues.find({}).fetch().forEach(function(element) {
     const lecture = Lectures.find({ lectureName: element.lectureName }).fetch()[0];
-    if (namesOfActiveLectures.indexOf(lecture.lectureName) < 0) {
-      activeLectures.push(lecture);
-      namesOfActiveLectures.push(lecture.lectureName);
+    if (lecture != null) {
+      if (namesOfActiveLectures.indexOf(lecture.lectureName) < 0) {
+        activeLectures.push(lecture);
+        namesOfActiveLectures.push(lecture.lectureName);
+      }
     }
   });
 

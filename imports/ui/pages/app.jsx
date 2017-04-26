@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
-import { Lectures } from '../../api/lectures/lectures.js';
 
 import SliderWrapper from '../SliderWrapper';
 import { CurrentUser } from '../../startup/xUser';
@@ -67,7 +66,7 @@ export class App extends Component {
             <table id="gaugeTable">
               <tbody>
                 <td className="gaugeLeftText">Slow</td>
-                <td className="gaugeMiddleText"><h2>Average</h2></td>
+                <td className="gaugeMiddleText"><h2>Class average</h2></td>
                 <td className="gaugeRightText">Fast</td>
               </tbody>
             </table>

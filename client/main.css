@@ -24,6 +24,9 @@ h1 {
 h2 {
   margin-top: 5px;
 }
+h3 .lectures-header {
+  text-align: left;
+}
 h3 {
   margin-top: 30px;
 }
@@ -131,6 +134,9 @@ form {
   margin-bottom: -10px;
   position: relative;
 }
+#frontpage-form {
+  height: 40px;
+}
 
 ul {
   margin: 0;
@@ -204,3 +210,29 @@ button.invisibleButton {
   text-align:right;
   padding-right:23px;
 }
+.lectures-container {
+  text-align:left;
+  margin-top: 20px;
+}
+#lectures-table .left {
+  text-align:left;
+  vertical-align: middle;
+  padding-left:10px;
+}
+#lectures-table .right {
+  text-align:right;
+  padding-right:10px;
+}
+.table th, .table td {
+     border-top: none;
+ }
+ #front-page-button {
+   background-color: #8BC9FF;
+   border-width: 0px;
+   width: 100%;
+   margin-top: -15px;
+ }
+
+ .enter-subject {
+   margin-top: 40px;
+ }

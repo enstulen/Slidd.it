@@ -30,7 +30,7 @@ export default class GaugeWrapper extends Component {
   render() {
     return (
       <div>
-        <Gauge value={this.calculateAvarage(this.props.sliderValues)} width={this.state.width} height={this.state.height} label="" />
+        <Gauge className="gauge" value={this.calculateAvarage(this.props.sliderValues)} width={this.state.width} height={this.state.height} label="" />
       </div>
     );
   }
